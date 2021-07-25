@@ -1,23 +1,8 @@
-/*
-  Warnings:
-
-  - You are about to drop the `cliente` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `image` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropForeignKey
-ALTER TABLE `image` DROP FOREIGN KEY `image_ibfk_1`;
-
--- DropTable
-DROP TABLE `cliente`;
-
--- DropTable
-DROP TABLE `image`;
-
 -- CreateTable
 CREATE TABLE `Films` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `Filme` VARCHAR(191) NOT NULL,
+    `Genero` VARCHAR(191) NOT NULL,
     `DataDeLancamento` VARCHAR(191) NOT NULL,
     `Classificacao` VARCHAR(191) NOT NULL,
     `TempoDeFilme` VARCHAR(191) NOT NULL,
