@@ -24,7 +24,7 @@ export class FilmeService {
     });
   }
 
-  findOne(id: number) {
+  findOne (id: number) {
     return this.prisma.films.findUnique({
       where:{id},
       include:{
@@ -33,7 +33,7 @@ export class FilmeService {
     });
   }
 
-  update(id: number, data: UpdateFilmeDto) {
+  update (id: number, data: UpdateFilmeDto) {
     return this.prisma.films.update({
       where:{id},
       data,
@@ -43,7 +43,7 @@ export class FilmeService {
     });
     }
 
-  remove(id: number) {
+  remove (id: number) {
     return this.prisma.films.delete({
       where:{id}
     });
