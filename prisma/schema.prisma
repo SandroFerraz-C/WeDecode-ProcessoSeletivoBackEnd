@@ -3,31 +3,33 @@ datasource db {
   url  = env("DATABASE_URL")
 }
 
-generator client {
+generator films {
   provider = "prisma-client-js"
 }
 
 
-model Cliente {
-  id                               Int     @id @default(autoincrement())
-  Nome                        String @unique
-  Email                        String
-  EnderecoEntrega      String
-  Numero                     Int
-  Municipio                 String
-  Referencia                String
-  Telefone                    Int
-  DataEntrega              String
-  ValorCompra             Int
 
-  images Image[]
+model Films {
+  id                                  Int     @id @default(autoincrement())
+  Filme                           String @unique
+  Genero                         String
+  DataDeLancamento    String
+  Classificacao               String
+  TempoDeFilme           String
+  Diretor                        String  
+  Orcamento                  String
+
+
+  EspectadorFilmes Espectador []
 }
 
-model Image {
-  id            Int               @id @default(autoincrement())
+model Espectador {
+  id                                Int               @id @default(autoincrement())
 
-  modelo    Cliente    @relation(fields: [ClienteId], references: [id])
-  ClienteId    Int
+  EspectadorFilmes    Films    @relation(fields: [EspectadorId], references: [id])
+  EspectadorId             Int
 
-  url           String
+  Nome                        String
+  Documento               Int
+ 
 }
