@@ -1,7 +1,22 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Back-end Challenge - Film Control System
+The goal was to make the backend of a system that controls movies and which people already have them.
+watched.
+
+Requirements:
+● The backend must have been programmed in Node.js.
+● An ORM was used to map the database into code, in this case Prisma
+.
+Use cases:
+● It is possible to insert new movies;
+● It is possible to read the list of registered movies;
+● It is possible to insert new viewers;
+● It is possible to read the list of registered viewers;
+● It is to mark that a viewer has seen a movie;
+● You can see how many movies each viewer has seen;
+● You can see how many viewers a movie has had.
 
 ## Installation
 
@@ -34,16 +49,13 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+> Project status: Completed :heavy_check_mark:
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Created by Sandro Ferraz
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- LinkedIn - [Sandro Ferraz](https://www.linkedin.com/in/sandro-ferraz-6761921b5/)
+- Website - (https://sandroferraz-c.github.io/portifolio/)
 
 ## License
 
