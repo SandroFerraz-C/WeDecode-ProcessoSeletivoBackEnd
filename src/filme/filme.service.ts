@@ -1,9 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateFilmeDto } from './dto/create-filme.dto';
 import { UpdateFilmeDto } from './dto/update-filme.dto';
 
 @Injectable()
 export class FilmeService {
+  constructor(private readonly prisma: PrismaService){}
+
   create(createFilmeDto: CreateFilmeDto) {
     return 'This action adds a new filme';
   }
