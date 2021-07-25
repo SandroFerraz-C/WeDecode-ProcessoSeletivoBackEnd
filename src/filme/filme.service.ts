@@ -7,23 +7,45 @@ import { UpdateFilmeDto } from './dto/update-filme.dto';
 export class FilmeService {
   constructor(private readonly prisma: PrismaService){}
 
-  create(createFilmeDto: CreateFilmeDto) {
-    return 'This action adds a new filme';
+  create(data: CreateFilmeDto) {
+    return this.prisma.films.create({
+      data,
+    include:{
+      EspectadorFilmes: true,
+    }
+  });
   }
 
   findAll() {
-    return `This action returns all filme`;
+    return this.prisma.films.findMany({
+      include:{
+        EspectadorFilmes: true,
+      }
+    });
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} filme`;
+    return this.prisma.films.findUnique({
+      where:{id},
+      include:{
+        EspectadorFilmes: true,
+      }
+    });
   }
 
-  update(id: number, updateFilmeDto: UpdateFilmeDto) {
-    return `This action updates a #${id} filme`;
-  }
+  update(id: number, data: UpdateFilmeDto) {
+    return this.prisma.films.update({
+      where:{id},
+      data,
+      include:{
+        EspectadorFilmes: true,
+      }
+    });
+    }
 
   remove(id: number) {
-    return `This action removes a #${id} filme`;
+    return this.prisma.films.delete({
+      where:{id}
+    });
   }
 }
