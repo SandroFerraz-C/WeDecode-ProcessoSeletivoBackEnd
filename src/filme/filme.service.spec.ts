@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { FilmeService } from './filme.service';
 
+//Tests for the service
 describe('FilmeService', () => {
   let service: FilmeService;
 

@@ -5,8 +5,12 @@ import { UpdateFilmeDto } from './dto/update-filme.dto';
 
 @Injectable()
 export class FilmeService {
-  constructor(private readonly prisma: PrismaService){}
+  constructor(private readonly prisma: PrismaService){} //Along this line, NestJS injects an instance of prism service
 
+   //Service with CRUD options
+ 
+
+   //Creating a Movie
   create(data: CreateFilmeDto) {
     return this.prisma.films.create({
       data,
@@ -16,6 +20,7 @@ export class FilmeService {
   });
   }
 
+  //Views of all registered movies
   findAll() {
     return this.prisma.films.findMany({
       include:{
@@ -24,6 +29,7 @@ export class FilmeService {
     });
   }
 
+  //Movie views by ID
   findOne (id: number) {
     return this.prisma.films.findUnique({
       where:{id},
@@ -33,6 +39,7 @@ export class FilmeService {
     });
   }
 
+  //Modification of registered data
   update (id: number, data: UpdateFilmeDto) {
     return this.prisma.films.update({
       where:{id},
@@ -43,6 +50,7 @@ export class FilmeService {
     });
     }
 
+    //Deleting a registered movie
   remove (id: number) {
     return this.prisma.films.delete({
       where:{id}

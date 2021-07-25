@@ -8,10 +8,10 @@ generator films {
 }
 
 
-
+///Films Table
 model Films {
   id                                  Int     @id @default(autoincrement())
-  Filme                           String @unique
+  Filme                           String @unique /// Defines a movie as unique
   Genero                         String
   DataDeLancamento    String
   Classificacao               String
@@ -20,13 +20,14 @@ model Films {
   Orcamento                  String
 
 
-  EspectadorFilmes Espectador []
+  EspectadorFilmes Espectador [] ///Relationship between the Movies and Spectators tables
 }
 
+///Spectators Table
 model Espectador {
-  id                                Int               @id @default(autoincrement())
+  id                                Int               @id @default(autoincrement()) /// Essa Linha gera o Primary Key, Gera o Auto Increment e define o campo de ID como Inteiro
 
-  EspectadorFilmes    Films    @relation(fields: [EspectadorId], references: [id])
+  EspectadorFilmes    Films    @relation(fields: [EspectadorId], references: [id]) /// Relating Spectators Table ID to a Movie ID
   EspectadorId             Int
 
   Nome                        String
