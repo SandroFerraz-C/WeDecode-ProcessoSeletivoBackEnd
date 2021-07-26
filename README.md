@@ -5,11 +5,11 @@ Back-end Challenge - Film Control System
 The goal was to make the backend of a system that controls movies and which people already have them.
 watched.
 
-Requirements:
+### Requirements:
 ● The backend must have been programmed in Node.js.
 ● An ORM was used to map the database into code, in this case Prisma
 .
-Use cases:
+### Use cases:
 ● It is possible to insert new movies;
 ● It is possible to read the list of registered movies;
 ● It is possible to insert new viewers;
